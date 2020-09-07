@@ -73,6 +73,11 @@ namespace TourCtrl
 
         private void SetEditDeleteEnabled()
         {
+            if (_t.TournamentState != TournamentState.NotStarted)
+            {
+                return;
+            }
+
             var can = this.listParticipants.SelectedItems.Count == 1 && this.listParticipants.SelectedItems[0].Tag is ParticipantInTournament t;
             this.btRemove.Enabled = can;
             this.btEdit.Enabled = can;
