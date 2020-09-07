@@ -1,14 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TourCtrl.Models;
+using TourCtrl.Properties;
 
 namespace TourCtrl
 {
@@ -19,10 +14,12 @@ namespace TourCtrl
             InitializeComponent();
             LoadTournaments();
             ValidateViewButtons();
+            this.pictureBox1.Image = Resources.Header;
         }
 
         private void LoadTournaments()
         {
+            this.listTournaments.Items.Clear();
             var items = new TourCtrlContext().Tournament.AsNoTracking().Include(x => x.Game).Include(x => x.WinnerParticipant).ToList();
 
             foreach (var item in items)
@@ -41,7 +38,7 @@ namespace TourCtrl
         {
             if (this.listTournaments.SelectedItems.Count == 1 && this.listTournaments.SelectedItems[0].Tag is Tournament t)
             {
-                new TournamentOverview().ShowDialog();
+                new TournamentOverview(t.Id).ShowDialog();
             }
         }
 
