@@ -102,6 +102,7 @@
             this.btExport.TabIndex = 2;
             this.btExport.Text = "Export Data";
             this.btExport.UseVisualStyleBackColor = true;
+            this.btExport.Click += new System.EventHandler(this.btExport_Click);
             // 
             // tabControl1
             // 

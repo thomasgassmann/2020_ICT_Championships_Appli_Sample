@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -174,6 +175,46 @@ namespace TourCtrl
             if (StageLogic.StartTournamnet(_t))
             {
                 this.LoadTournament();
+            }
+        }
+
+        private void btExport_Click(object sender, EventArgs e)
+        {
+            var matches = new TourCtrlContext().Match.AsNoTracking()
+                .Include(x => x.Participant1)
+                .Include(x => x.Participant2)
+                .Where(x => x.TournamentId == _tournamentId).ToList();
+            using (var dialog = new SaveFileDialog())
+            {
+                dialog.FileName = $"{_t.Title}-{DateTime.Now.Date:yyyyMMdd}.csv";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var streamWriter = new StreamWriter(dialog.FileName))
+                    {
+                        string Encode(string t)
+                        {
+                            if (t.Contains(","))
+                            {
+                                return $"\"{t.Replace("\"", "\"\"")}\"";
+                            }
+
+                            return t;
+                        }
+
+                        foreach (var match in matches.OrderBy(x => x.Stage).ThenBy(x => x.Order))
+                        {
+                            var winner = match.WinnerParticipantId == match.Participant1Id
+                                ? match.Participant1
+                                : (match.WinnerParticipantId == match.Participant2Id
+                                    ? match.Participant2
+                                    : null);
+                            var looser = match.WinnerParticipantId != match.Participant1Id
+                                ? match.Participant1
+                                : match.Participant2;
+                            streamWriter.WriteLine($"{match.Stage + 1},{match.Order + 1},{Encode(winner?.Name ?? "-")},{Encode(looser?.Name ?? "-")}");
+                        }
+                    }
+                }
             }
         }
     }

@@ -41,7 +41,7 @@ namespace TourCtrl
                 var st = new StageItem
                 {
                     Match = match,
-                    AutoSize = true,
+                    AutoSize = true
                 };
 
                 st.MinimumSize = new System.Drawing.Size(st.Size.Width, st.Size.Height);
