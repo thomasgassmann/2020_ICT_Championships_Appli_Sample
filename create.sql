@@ -46,3 +46,6 @@ create table Match(
 	[Order] integer not null,
 	WinnerParticipantID integer foreign key references Participant(ID)
 );
+
+
+insert into Game(Name) values ('Overwatch'), ('GTA');
