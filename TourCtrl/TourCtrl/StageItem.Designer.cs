@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbParticipant1 = new System.Windows.Forms.Label();
-            this.lbParticipant2 = new System.Windows.Forms.Label();
-            this.btWinPart1 = new System.Windows.Forms.Button();
-            this.btWinPart2 = new System.Windows.Forms.Button();
-            this.btLoose1 = new System.Windows.Forms.Button();
-            this.btLoose2 = new System.Windows.Forms.Button();
-            this.lbState1 = new System.Windows.Forms.Label();
             this.lbState2 = new System.Windows.Forms.Label();
+            this.lbState1 = new System.Windows.Forms.Label();
+            this.btLoose2 = new System.Windows.Forms.Button();
+            this.btLoose1 = new System.Windows.Forms.Button();
+            this.btWinPart2 = new System.Windows.Forms.Button();
+            this.btWinPart1 = new System.Windows.Forms.Button();
+            this.lbParticipant2 = new System.Windows.Forms.Label();
+            this.lbParticipant1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,86 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "groupBox1";
             // 
+            // lbState2
+            // 
+            this.lbState2.AutoSize = true;
+            this.lbState2.Location = new System.Drawing.Point(438, 54);
+            this.lbState2.Name = "lbState2";
+            this.lbState2.Size = new System.Drawing.Size(29, 25);
+            this.lbState2.TabIndex = 3;
+            this.lbState2.Text = "W";
+            // 
+            // lbState1
+            // 
+            this.lbState1.AutoSize = true;
+            this.lbState1.Location = new System.Drawing.Point(88, 54);
+            this.lbState1.Name = "lbState1";
+            this.lbState1.Size = new System.Drawing.Size(29, 25);
+            this.lbState1.TabIndex = 3;
+            this.lbState1.Text = "W";
+            // 
+            // btLoose2
+            // 
+            this.btLoose2.BackColor = System.Drawing.Color.DarkRed;
+            this.btLoose2.Location = new System.Drawing.Point(456, 49);
+            this.btLoose2.Name = "btLoose2";
+            this.btLoose2.Size = new System.Drawing.Size(40, 34);
+            this.btLoose2.TabIndex = 2;
+            this.btLoose2.Text = "L";
+            this.btLoose2.UseVisualStyleBackColor = false;
+            this.btLoose2.Click += new System.EventHandler(this.btLoose2_Click);
+            // 
+            // btLoose1
+            // 
+            this.btLoose1.BackColor = System.Drawing.Color.DarkRed;
+            this.btLoose1.Location = new System.Drawing.Point(106, 49);
+            this.btLoose1.Name = "btLoose1";
+            this.btLoose1.Size = new System.Drawing.Size(40, 34);
+            this.btLoose1.TabIndex = 2;
+            this.btLoose1.Text = "L";
+            this.btLoose1.UseVisualStyleBackColor = false;
+            this.btLoose1.Click += new System.EventHandler(this.btLoose1_Click);
+            // 
+            // btWinPart2
+            // 
+            this.btWinPart2.BackColor = System.Drawing.Color.LawnGreen;
+            this.btWinPart2.Location = new System.Drawing.Point(410, 49);
+            this.btWinPart2.Name = "btWinPart2";
+            this.btWinPart2.Size = new System.Drawing.Size(40, 34);
+            this.btWinPart2.TabIndex = 2;
+            this.btWinPart2.Text = "W";
+            this.btWinPart2.UseVisualStyleBackColor = false;
+            this.btWinPart2.Click += new System.EventHandler(this.btWinPart2_Click);
+            // 
+            // btWinPart1
+            // 
+            this.btWinPart1.BackColor = System.Drawing.Color.LawnGreen;
+            this.btWinPart1.Location = new System.Drawing.Point(60, 49);
+            this.btWinPart1.Name = "btWinPart1";
+            this.btWinPart1.Size = new System.Drawing.Size(40, 34);
+            this.btWinPart1.TabIndex = 2;
+            this.btWinPart1.Text = "W";
+            this.btWinPart1.UseVisualStyleBackColor = false;
+            this.btWinPart1.Click += new System.EventHandler(this.btWinPart1_Click);
+            // 
+            // lbParticipant2
+            // 
+            this.lbParticipant2.AutoSize = true;
+            this.lbParticipant2.Location = new System.Drawing.Point(425, 86);
+            this.lbParticipant2.Name = "lbParticipant2";
+            this.lbParticipant2.Size = new System.Drawing.Size(57, 25);
+            this.lbParticipant2.TabIndex = 1;
+            this.lbParticipant2.Text = "Part 2";
+            // 
+            // lbParticipant1
+            // 
+            this.lbParticipant1.AutoSize = true;
+            this.lbParticipant1.Location = new System.Drawing.Point(72, 86);
+            this.lbParticipant1.Name = "lbParticipant1";
+            this.lbParticipant1.Size = new System.Drawing.Size(57, 25);
+            this.lbParticipant1.TabIndex = 1;
+            this.lbParticipant1.Text = "Part 1";
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -75,91 +155,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "VS";
             // 
-            // lbParticipant1
-            // 
-            this.lbParticipant1.AutoSize = true;
-            this.lbParticipant1.Location = new System.Drawing.Point(72, 86);
-            this.lbParticipant1.Name = "lbParticipant1";
-            this.lbParticipant1.Size = new System.Drawing.Size(57, 25);
-            this.lbParticipant1.TabIndex = 1;
-            this.lbParticipant1.Text = "Part 1";
-            // 
-            // lbParticipant2
-            // 
-            this.lbParticipant2.AutoSize = true;
-            this.lbParticipant2.Location = new System.Drawing.Point(425, 86);
-            this.lbParticipant2.Name = "lbParticipant2";
-            this.lbParticipant2.Size = new System.Drawing.Size(57, 25);
-            this.lbParticipant2.TabIndex = 1;
-            this.lbParticipant2.Text = "Part 2";
-            // 
-            // btWinPart1
-            // 
-            this.btWinPart1.BackColor = System.Drawing.Color.LawnGreen;
-            this.btWinPart1.Location = new System.Drawing.Point(60, 49);
-            this.btWinPart1.Name = "btWinPart1";
-            this.btWinPart1.Size = new System.Drawing.Size(40, 34);
-            this.btWinPart1.TabIndex = 2;
-            this.btWinPart1.Text = "W";
-            this.btWinPart1.UseVisualStyleBackColor = false;
-            this.btWinPart1.Click += new System.EventHandler(this.btWinPart1_Click);
-            // 
-            // btWinPart2
-            // 
-            this.btWinPart2.BackColor = System.Drawing.Color.LawnGreen;
-            this.btWinPart2.Location = new System.Drawing.Point(410, 49);
-            this.btWinPart2.Name = "btWinPart2";
-            this.btWinPart2.Size = new System.Drawing.Size(40, 34);
-            this.btWinPart2.TabIndex = 2;
-            this.btWinPart2.Text = "W";
-            this.btWinPart2.UseVisualStyleBackColor = false;
-            this.btWinPart2.Click += new System.EventHandler(this.btWinPart2_Click);
-            // 
-            // btLoose1
-            // 
-            this.btLoose1.BackColor = System.Drawing.Color.DarkRed;
-            this.btLoose1.Location = new System.Drawing.Point(106, 49);
-            this.btLoose1.Name = "btLoose1";
-            this.btLoose1.Size = new System.Drawing.Size(40, 34);
-            this.btLoose1.TabIndex = 2;
-            this.btLoose1.Text = "L";
-            this.btLoose1.UseVisualStyleBackColor = false;
-            this.btLoose1.Click += new System.EventHandler(this.btLoose1_Click);
-            // 
-            // btLoose2
-            // 
-            this.btLoose2.BackColor = System.Drawing.Color.DarkRed;
-            this.btLoose2.Location = new System.Drawing.Point(456, 49);
-            this.btLoose2.Name = "btLoose2";
-            this.btLoose2.Size = new System.Drawing.Size(40, 34);
-            this.btLoose2.TabIndex = 2;
-            this.btLoose2.Text = "L";
-            this.btLoose2.UseVisualStyleBackColor = false;
-            this.btLoose2.Click += new System.EventHandler(this.btLoose2_Click);
-            // 
-            // lbState1
-            // 
-            this.lbState1.AutoSize = true;
-            this.lbState1.Location = new System.Drawing.Point(88, 54);
-            this.lbState1.Name = "lbState1";
-            this.lbState1.Size = new System.Drawing.Size(29, 25);
-            this.lbState1.TabIndex = 3;
-            this.lbState1.Text = "W";
-            // 
-            // lbState2
-            // 
-            this.lbState2.AutoSize = true;
-            this.lbState2.Location = new System.Drawing.Point(438, 54);
-            this.lbState2.Name = "lbState2";
-            this.lbState2.Size = new System.Drawing.Size(29, 25);
-            this.lbState2.TabIndex = 3;
-            this.lbState2.Text = "W";
-            // 
             // StageItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
+            this.MinimumSize = new System.Drawing.Size(579, 151);
             this.Name = "StageItem";
             this.Size = new System.Drawing.Size(579, 151);
             this.groupBox.ResumeLayout(false);

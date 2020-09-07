@@ -34,7 +34,7 @@ namespace TourCtrl
             this.tabControl.TabPages.Clear();
             foreach (var group in this._matches.GroupBy(x => x.Stage))
             {
-                var page = new TabPage($"Stage {group.Key}");
+                var page = new TabPage($"Stage {group.Key + 1}");
                 var g = new StageOverview
                 {
                     MatchesInStage = group.ToList(),

@@ -68,14 +68,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.layoutPanel.AutoScroll = true;
-            this.layoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.layoutPanel.Location = new System.Drawing.Point(12, 86);
             this.layoutPanel.MinimumSize = new System.Drawing.Size(0, 500);
             this.layoutPanel.Name = "layoutPanel";
             this.layoutPanel.Size = new System.Drawing.Size(858, 500);
             this.layoutPanel.TabIndex = 2;
-            this.layoutPanel.WrapContents = false;
             // 
             // StageOverview
             // 
