@@ -45,6 +45,13 @@ namespace TourCtrl
             this.lbGame.Text = $"Game: {_t.Game.Name}";
 
             LoadParticipantInfo();
+            LoadMatchInfo();
+        }
+
+        private void LoadMatchInfo()
+        {
+            this.btStartTournament.Visible = _t.TournamentState == TournamentState.NotStarted;
+
         }
 
         private void SetEditDeleteEnabled()
@@ -56,6 +63,11 @@ namespace TourCtrl
 
         private void LoadParticipantInfo()
         {
+            this.btRemove.Enabled = _t.TournamentState == TournamentState.NotStarted;
+            this.btEdit.Enabled = _t.TournamentState == TournamentState.NotStarted;
+            this.btAddParticipant.Enabled = _t.TournamentState == TournamentState.NotStarted;
+            this.btFillRandom.Enabled = _t.TournamentState == TournamentState.NotStarted;
+
             this.lbParticipantCount.Text = _t.ParticipantInTournament.Count().ToString();
             this.lbTournamentSizeCount.Text = _t.Size.ToString();
             this.lbParticipantTitle.Text = $"Participants of \"{_t.Title}\"";
@@ -139,6 +151,11 @@ namespace TourCtrl
         private void listParticipants_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SetEditDeleteEnabled();
+        }
+
+        private void btStartTournament_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,7 @@ namespace TourCtrl
                 var ctx = new TourCtrlContext();
                 ctx.Tournament.Add(new Tournament
                 {
+                    TournamentState = TournamentState.NotStarted,
                     GameId = (this.cbGame.SelectedItem as Game).Id,
                     Title = this.tbGame.Text,
                     Size = (int)this.numSize.Value

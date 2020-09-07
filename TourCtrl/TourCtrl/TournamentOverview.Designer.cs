@@ -47,9 +47,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbParticipantTitle = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btStartTournament = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -247,6 +249,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btStartTournament);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -254,6 +257,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Matches";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btStartTournament
+            // 
+            this.btStartTournament.Location = new System.Drawing.Point(13, 18);
+            this.btStartTournament.Name = "btStartTournament";
+            this.btStartTournament.Size = new System.Drawing.Size(251, 92);
+            this.btStartTournament.TabIndex = 7;
+            this.btStartTournament.Text = "Start Tournament";
+            this.btStartTournament.UseVisualStyleBackColor = true;
+            this.btStartTournament.Click += new System.EventHandler(this.btStartTournament_Click);
             // 
             // TournamentOverview
             // 
@@ -273,6 +286,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +313,6 @@
         private System.Windows.Forms.Button btRemove;
         private System.Windows.Forms.ListView listParticipants;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button btStartTournament;
     }
 }
