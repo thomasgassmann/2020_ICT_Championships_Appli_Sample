@@ -37,7 +37,8 @@ namespace TourCtrl
                 var page = new TabPage($"Stage {group.Key}");
                 var g = new StageOverview
                 {
-                    MatchesInStage = group.ToList()
+                    MatchesInStage = group.ToList(),
+                    Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left
                 };
                 page.Controls.Add(g);
 

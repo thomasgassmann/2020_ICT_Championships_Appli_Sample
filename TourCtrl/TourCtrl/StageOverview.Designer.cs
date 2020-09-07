@@ -73,6 +73,7 @@
             this.layoutPanel.Name = "layoutPanel";
             this.layoutPanel.Size = new System.Drawing.Size(884, 549);
             this.layoutPanel.TabIndex = 2;
+            this.layoutPanel.WrapContents = false;
             // 
             // StageOverview
             // 

@@ -32,9 +32,10 @@ namespace TourCtrl
         private void RenderStage()
         {
             lbStage.Text = $"Stage {_matches[0].Stage + 1}";
-            lbParticipants.Text = $"{_matches.SelectMany(x => new[] { x.Participant1Id, x.Participant2Id }).Distinct().Count()} participants";
+            lbParticipants.Text = $"{_matches.SelectMany(x => new[] { x.Participant1Id, x.Participant2Id }).Where(x => x != null).Distinct().Count()} participants";
             lbMatches.Text = $"{_matches.Count} Matches";
 
+            this.layoutPanel.WrapContents = false;
             foreach (var match in _matches)
             {
                 var st = new StageItem

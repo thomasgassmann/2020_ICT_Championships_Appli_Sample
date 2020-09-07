@@ -47,8 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbParticipantTitle = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btStartTournament = new System.Windows.Forms.Button();
             this.matchUserControl = new TourCtrl.MatchUserControl();
+            this.btStartTournament = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -260,6 +260,16 @@
             this.tabPage2.Text = "Matches";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // matchUserControl
+            // 
+            this.matchUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.matchUserControl.Location = new System.Drawing.Point(13, 18);
+            this.matchUserControl.Name = "matchUserControl";
+            this.matchUserControl.Size = new System.Drawing.Size(1218, 623);
+            this.matchUserControl.TabIndex = 8;
+            // 
             // btStartTournament
             // 
             this.btStartTournament.Location = new System.Drawing.Point(13, 18);
@@ -269,16 +279,6 @@
             this.btStartTournament.Text = "Start Tournament";
             this.btStartTournament.UseVisualStyleBackColor = true;
             this.btStartTournament.Click += new System.EventHandler(this.btStartTournament_Click);
-            // 
-            // matchUserControl
-            // 
-            this.matchUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.matchUserControl.Location = new System.Drawing.Point(13, 18);
-            this.matchUserControl.Name = "matchUserControl";
-            this.matchUserControl.Size = new System.Drawing.Size(1228, 623);
-            this.matchUserControl.TabIndex = 8;
             // 
             // TournamentOverview
             // 
