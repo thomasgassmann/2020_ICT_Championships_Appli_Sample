@@ -31,7 +31,7 @@
             this.lbStage = new System.Windows.Forms.Label();
             this.lbMatches = new System.Windows.Forms.Label();
             this.lbParticipants = new System.Windows.Forms.Label();
-            this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lbStage
@@ -62,24 +62,23 @@
             this.lbParticipants.TabIndex = 1;
             this.lbParticipants.Text = "0 Participants";
             // 
-            // layoutPanel
+            // flowLayoutPanel
             // 
-            this.layoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.layoutPanel.AutoScroll = true;
-            this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.layoutPanel.Location = new System.Drawing.Point(12, 86);
-            this.layoutPanel.MinimumSize = new System.Drawing.Size(0, 500);
-            this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(858, 500);
-            this.layoutPanel.TabIndex = 2;
+            this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(12, 80);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(859, 531);
+            this.flowLayoutPanel.TabIndex = 2;
+            this.flowLayoutPanel.WrapContents = false;
             // 
             // StageOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.layoutPanel);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.lbParticipants);
             this.Controls.Add(this.lbMatches);
             this.Controls.Add(this.lbStage);
@@ -95,6 +94,6 @@
         private System.Windows.Forms.Label lbStage;
         private System.Windows.Forms.Label lbMatches;
         private System.Windows.Forms.Label lbParticipants;
-        protected System.Windows.Forms.FlowLayoutPanel layoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }
