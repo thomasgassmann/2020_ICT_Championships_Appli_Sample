@@ -19,7 +19,7 @@ namespace TourCtrl
 
         private void LoadTournaments()
         {
-            this.listTournaments.Items.Clear();
+            this.listTournaments.Items.Clear(); 
             var items = new TourCtrlContext().Tournament.AsNoTracking().Include(x => x.Game).Include(x => x.WinnerParticipant).ToList();
 
             foreach (var item in items)
