@@ -26,6 +26,13 @@ namespace TourCtrl
             LoadTournament();
             LoadFromTournament();
             SetEditDeleteEnabled();
+
+            this.matchUserControl.OnStageAdded += this.MatchUserControl_OnStageAdded;
+        }
+
+        private void MatchUserControl_OnStageAdded(object sender, EventArgs e)
+        {
+            this.LoadMatchInfo();
         }
 
         private void LoadTournament()
@@ -51,7 +58,16 @@ namespace TourCtrl
         private void LoadMatchInfo()
         {
             this.btStartTournament.Visible = _t.TournamentState == TournamentState.NotStarted;
+            this.matchUserControl.Visible = _t.TournamentState != TournamentState.NotStarted;
 
+            var matches = new TourCtrlContext().Match
+                .Include(x => x.Participant1)
+                .Include(x => x.Participant2)
+                .Include(x => x.WinnerParticipant)
+                .Where(x => x.TournamentId == _tournamentId)
+                .AsNoTracking()
+                .ToList();
+            matchUserControl.Matches = matches;
         }
 
         private void SetEditDeleteEnabled()
@@ -92,7 +108,7 @@ namespace TourCtrl
         {
             if (this.listParticipants.SelectedItems.Count == 1 && this.listParticipants.SelectedItems[0].Tag is ParticipantInTournament t)
             {
-                if (new EditParticipant(t.TournamentId.Value, t.Id).ShowDialog() == DialogResult.OK)
+                if (new EditParticipant(t.TournamentId.Value, t).ShowDialog() == DialogResult.OK)
                 {
                     this.LoadTournament();
                 }
@@ -155,7 +171,10 @@ namespace TourCtrl
 
         private void btStartTournament_Click(object sender, EventArgs e)
         {
-
+            if (StageLogic.StartTournamnet(_t))
+            {
+                this.LoadTournament();
+            }
         }
     }
 }

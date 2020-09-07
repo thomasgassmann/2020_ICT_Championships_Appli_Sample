@@ -25,21 +25,23 @@ namespace TourCtrl
 
             ctx.SaveChanges();
 
-            CreateStage(t.Id, 0);
-
-            return true;
+            return CreateStage(t.Id, 0);
         }
 
-        public static void CreateStage(int tournament, int stage)
+        public static bool CreateStage(int tournament, int stage)
         {
             var ctx = new TourCtrlContext();
 
             var participants = stage == 0
-                ? ctx.ParticipantInTournament.Include(x => x.ParticipantId).Where(x => x.TournamentId == tournament).Select(x => x.Participant)
+                ? ctx.ParticipantInTournament.Include(x => x.Participant).Where(x => x.TournamentId == tournament).Select(x => x.Participant)
                 : ctx.Match.Include(x => x.WinnerParticipant).Where(x => x.Stage == stage - 1 && x.TournamentId == tournament).Select(x => x.WinnerParticipant);
 
             var random = new Random();
             var all = participants.ToList().OrderBy(x => random.Next()).ToList();
+            if (all.Count == 1)
+            {
+                return false;
+            }
 
             var newMatches = new List<Match>();
             var i = 0;
@@ -70,6 +72,7 @@ namespace TourCtrl
 
             ctx.Match.AddRange(newMatches);
             ctx.SaveChanges();
+            return true;
         }
     }
 }

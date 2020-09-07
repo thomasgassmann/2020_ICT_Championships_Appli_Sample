@@ -48,6 +48,7 @@
             this.lbParticipantTitle = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btStartTournament = new System.Windows.Forms.Button();
+            this.matchUserControl = new TourCtrl.MatchUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -249,6 +250,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.matchUserControl);
             this.tabPage2.Controls.Add(this.btStartTournament);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
@@ -267,6 +269,16 @@
             this.btStartTournament.Text = "Start Tournament";
             this.btStartTournament.UseVisualStyleBackColor = true;
             this.btStartTournament.Click += new System.EventHandler(this.btStartTournament_Click);
+            // 
+            // matchUserControl
+            // 
+            this.matchUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.matchUserControl.Location = new System.Drawing.Point(13, 18);
+            this.matchUserControl.Name = "matchUserControl";
+            this.matchUserControl.Size = new System.Drawing.Size(1228, 623);
+            this.matchUserControl.TabIndex = 8;
             // 
             // TournamentOverview
             // 
@@ -314,5 +326,6 @@
         private System.Windows.Forms.ListView listParticipants;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button btStartTournament;
+        private MatchUserControl matchUserControl;
     }
 }

@@ -9,14 +9,22 @@ namespace TourCtrl
 {
     public partial class EditParticipant : Form
     {
-        private readonly int? id;
+        private readonly ParticipantInTournament _p;
         private readonly int _tid;
 
-        public EditParticipant(int tournamentId, int? participantInTournamentId)
+        public EditParticipant(int tournamentId, ParticipantInTournament p)
         {
             _tid = tournamentId;
-            id = participantInTournamentId;
+            _p = p;
             InitializeComponent();
+
+            if (p != null)
+            {
+                this.tbName.Text = p.Participant.Name;
+                this.rbPlayer.Checked = !p.Participant.IsTeam;
+                this.rbTeam.Checked = p.Participant.IsTeam;
+                this.cbTemporary.Checked = p.Participant.IsTemporary;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,9 +62,9 @@ namespace TourCtrl
 
                 var ctx = new TourCtrlContext();
                 ParticipantInTournament t;
-                if (id.HasValue)
+                if (_p != null)
                 {
-                    t = ctx.ParticipantInTournament.Include(x => x.Participant).First(x => x.Id == id.Value);
+                    t = ctx.ParticipantInTournament.Include(x => x.Participant).First(x => x.Id == _p.Id);
                 }
                 else
                 {
