@@ -160,6 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listParticipants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
+            this.listParticipants.FullRowSelect = true;
             this.listParticipants.HideSelection = false;
             this.listParticipants.Location = new System.Drawing.Point(16, 212);
             this.listParticipants.Name = "listParticipants";

@@ -32,7 +32,8 @@ namespace TourCtrl
         {
             _t = new TourCtrlContext().Tournament
                 .Include(x => x.Game)
-                .Include(x => x.ParticipantInTournament.Select(p => p.Participant))
+                .Include(x => x.ParticipantInTournament)
+                .ThenInclude(x => x.Participant)
                 .First(x => x.Id == _tournamentId);
 
             LoadFromTournament();
@@ -79,7 +80,7 @@ namespace TourCtrl
         {
             if (this.listParticipants.SelectedItems.Count == 1 && this.listParticipants.SelectedItems[0].Tag is ParticipantInTournament t)
             {
-                if (new EditParticipant(t.Id).ShowDialog() == DialogResult.OK)
+                if (new EditParticipant(t.TournamentId.Value, t.Id).ShowDialog() == DialogResult.OK)
                 {
                     this.LoadTournament();
                 }
@@ -129,7 +130,7 @@ namespace TourCtrl
 
         private void btAddParticipant_Click(object sender, EventArgs e)
         {
-            if (new EditParticipant(null).ShowDialog() == DialogResult.OK)
+            if (new EditParticipant(this._tournamentId, null).ShowDialog() == DialogResult.OK)
             {
                 this.LoadTournament();
             }
