@@ -68,10 +68,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.layoutPanel.AutoScroll = true;
+            this.layoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.layoutPanel.Location = new System.Drawing.Point(0, 86);
+            this.layoutPanel.Location = new System.Drawing.Point(12, 86);
+            this.layoutPanel.MinimumSize = new System.Drawing.Size(0, 500);
             this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(884, 549);
+            this.layoutPanel.Size = new System.Drawing.Size(858, 500);
             this.layoutPanel.TabIndex = 2;
             this.layoutPanel.WrapContents = false;
             // 
@@ -95,6 +97,6 @@
         private System.Windows.Forms.Label lbStage;
         private System.Windows.Forms.Label lbMatches;
         private System.Windows.Forms.Label lbParticipants;
-        private System.Windows.Forms.FlowLayoutPanel layoutPanel;
+        protected System.Windows.Forms.FlowLayoutPanel layoutPanel;
     }
 }
